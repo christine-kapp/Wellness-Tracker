@@ -1,2 +1,2 @@
 # python-final-project
-Introduction to Problem Solving In Python Final Project 
+A PERSONAL WELLNESS EVALUATION SYSTEM FOR DAILY USAGE 
