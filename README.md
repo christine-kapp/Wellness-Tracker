@@ -1,2 +1,2 @@
-# python-final-project
-A PERSONAL WELLNESS EVALUATION SYSTEM FOR DAILY USAGE 
+# Wellness-Tracker
+Wellness Tracker: A Personal Wellness Evaluation System For Daily Usage
