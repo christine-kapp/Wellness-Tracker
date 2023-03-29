@@ -147,60 +147,85 @@ print()
 print()
 
 
-# create backround screen + import image 
+# plot water results
 
-import turtle
-import time
+water_data = {"Water           ": water,
+              "Water Goal      ": water_goal}
 
-screen = turtle.Screen()
-screen.title("Water Consumption")
-screen.setup(width=400,height=400)
-screen.bgpic("wellness_tracker/linegraph.gif") # image address: https://maaw.info/images/BlankGraph2.gif
+max_value = max(water_data.values())
+print("Water Consumption")
+print()
 
+for label, value in water_data.items():
 
-# plot data collected 
+    length = int(value/4)
+    bar = label + " |" + "* " * length 
+    print(bar)
 
-def irma_setup():
+print("key: |* =",4,"fluid ounces|")
 
-    ...
-
-irma_setup()
-
-
-
+print()
+print()
 
 
+# plot sleep results
+
+sleep_data = {"Sleep           ": sleep,
+              "Sleep Goal      ": sleep_goal}
+
+max_value = max(sleep_data.values())
+print("Sleep Received")
+print()
+
+for label, value in sleep_data.items():
+
+    length = int(value*2)
+    bar = label + " |" + "* " * length
+    print(bar)
+
+print("key: |** =","1","hour|")
+
+print()
+print()
 
 
+# plot exercise results
+              
+exercise_data = {"Exercise        ": exercise,
+                 "Exercise Goal   ": exercise_goal}
+
+max_value = max(exercise_data.values())
+print("Exercise Done")
+print()
+
+for label, value in exercise_data.items():
+
+    length = int(value/5)
+    bar = label + " |" + "* " * length
+    print(bar)
+
+print("key: |* =",5,"minutes|")
+
+print()
+print()
 
 
+# plot active mind data
+                 
+active_mind_data = {"Active Mind     ": active_mind,
+                    "Active Mind Goal": active_mind_goal}
 
+max_value = max(active_mind_data.values())
+print("Active Mind Time")
+print()
 
+for label, value in active_mind_data.items():
 
+    length = int(value*3)
+    bar = label + " |" + "* " * length
+    print(bar)
 
+print("key: |*** =","1","hour|")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-
+print()
+print()
