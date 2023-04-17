@@ -95,12 +95,12 @@ def evaluate(exercise):
     if exercise < exercise_goal:
 
         exercise_difference = exercise_goal - exercise
-        print("Exercise goal", exercise_difference, "fluid ounces away.")
+        print("Exercise goal", exercise_difference, "minutes.")
 
     elif exercise > exercise_goal:
 
         exercise_difference = exercise - exercise_goal
-        print("Exercise goal exceeded by", exercise_difference, "fluid ounces.")
+        print("Exercise goal exceeded by", exercise_difference, "minutes.")
 
     elif exercise == exercise_goal:
 
@@ -130,12 +130,12 @@ def evaluate(active_mind):
     if active_mind < active_mind_goal:
 
         active_mind_difference = active_mind_goal - active_mind
-        print("Active mind goal", active_mind_difference, "fluid ounces away.")
+        print("Active mind goal", active_mind_difference, "hours.")
 
     elif active_mind > active_mind_goal:
 
         active_mind_difference = active_mind - active_mind_goal
-        print("Active mind goal exceeded by", active_mind_difference, "fluid ounces.")
+        print("Active mind goal exceeded by", active_mind_difference, "hours.")
 
     elif active_mind == active_mind_goal:
 
@@ -146,86 +146,71 @@ evaluate(active_mind)
 print()
 print()
 
-
-# plot water results
-
-water_data = {"Water           ": water,
-              "Water Goal      ": water_goal}
-
-max_value = max(water_data.values())
-print("Water Consumption")
-print()
-
-for label, value in water_data.items():
-
-    length = int(value/4)
-    bar = label + " |" + "* " * length 
-    print(bar)
-
-print("key: |* =",4,"fluid ounces|")
-
-print()
-print()
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import numpy as np
 
 
-# plot sleep results
+# water consumption
 
-sleep_data = {"Sleep           ": sleep,
-              "Sleep Goal      ": sleep_goal}
+data = {'Water Consumption':water, 'Water Goal':water_goal}
+courses = list(data.keys())
+values = list(data.values())
+  
+fig = plt.figure(figsize = (10, 5))
+ 
+plt.bar(courses, values, color ='blue',
+        width = 0.4)
+ 
+plt.xlabel("Today's Water Data")
+plt.ylabel("Water Fluid oz")
+plt.title("Water Goal vs Water Consumption")
+plt.show()
 
-max_value = max(sleep_data.values())
-print("Sleep Received")
-print()
+# sleep received
 
-for label, value in sleep_data.items():
+data = {'Water Consumption':sleep, 'Water Goal':sleep_goal}
+courses = list(data.keys())
+values = list(data.values())
+  
+fig = plt.figure(figsize = (10, 5))
+ 
+plt.bar(courses, values, color ='purple',
+        width = 0.4)
+ 
+plt.xlabel("Today's Sleep Data")
+plt.ylabel("Sleep Hours")
+plt.title("Sleep Goal vs Sleep Received")
+plt.show()
 
-    length = int(value*2)
-    bar = label + " |" + "* " * length
-    print(bar)
+# exercise done
 
-print("key: |** =","1","hour|")
+data = {'Exercise Done':exercise, 'Exercise Goal':exercise_goal}
+courses = list(data.keys())
+values = list(data.values())
+  
+fig = plt.figure(figsize = (10, 5))
+ 
+plt.bar(courses, values, color ='green',
+        width = 0.4)
+ 
+plt.xlabel("Today's Exercise Data")
+plt.ylabel("Exercise Minutes")
+plt.title("Exercise Goal vs Exercise Done")
+plt.show()
 
-print()
-print()
+# activemind time spent
 
-
-# plot exercise results
-              
-exercise_data = {"Exercise        ": exercise,
-                 "Exercise Goal   ": exercise_goal}
-
-max_value = max(exercise_data.values())
-print("Exercise Done")
-print()
-
-for label, value in exercise_data.items():
-
-    length = int(value/5)
-    bar = label + " |" + "* " * length
-    print(bar)
-
-print("key: |* =",5,"minutes|")
-
-print()
-print()
-
-
-# plot active mind data
-                 
-active_mind_data = {"Active Mind     ": active_mind,
-                    "Active Mind Goal": active_mind_goal}
-
-max_value = max(active_mind_data.values())
-print("Active Mind Time")
-print()
-
-for label, value in active_mind_data.items():
-
-    length = int(value*3)
-    bar = label + " |" + "* " * length
-    print(bar)
-
-print("key: |*** =","1","hour|")
-
-print()
-print()
+data = {'Activemind Time Spent':active_mind, 'Activemind Goal':active_mind_goal}
+courses = list(data.keys())
+values = list(data.values())
+  
+fig = plt.figure(figsize = (10, 5))
+ 
+plt.bar(courses, values, color ='red',
+        width = 0.4)
+ 
+plt.xlabel("Today's Activemind Data")
+plt.ylabel("Activemind Goal Hours")
+plt.title("Activemind Goal vs Activemind Time Spent")
+plt.show()
